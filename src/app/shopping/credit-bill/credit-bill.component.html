@@ -1,0 +1,20 @@
+<div class="headline">
+  <p class="head">BILL</p>
+</div>
+
+<div class="box">
+  <div>
+    <label>Product Details:</label>
+    <div *ngFor="let i of Item" style="text-indent: 50px;">
+      <p>Name: {{i.name}}</p>
+      <p>Quantity: {{i.quantity}}</p>
+    </div>
+  </div>
+  <br>
+  <div>
+    <label>Total Charge: {{balance}}</label>
+  </div>
+</div>
+
+<br>
+<button type="button" (click)="onSubmit()" style="font-size: 20px; float:left;">Logout</button>

@@ -1,0 +1,26 @@
+<div class="headline">
+    <button (click)="toggleMenu()" class="hamburger">
+        <span>toggle menu</span>
+    </button>
+    <p class="head">Credit Card Details</p>
+    <app-menu [@slideInOut]="menuState"></app-menu>
+</div>
+<br>
+
+
+<div class="box">
+    <div *ngFor="let i of data" class="box">
+        Selected items:
+        <div *ngFor="let d of i[0][0]" style="text-indent: 50px;">
+            Name:{{d.name}}
+            <span>
+                Quantity: {{d.quantity}}
+            </span>
+        </div>
+        Price: {{i[2]}}
+        <br>Date: {{i[1]}}
+
+        <button type="submit" style="font-size:20px;" (click)="pay(i)">Pay</button>
+    </div>
+    <br>
+</div>

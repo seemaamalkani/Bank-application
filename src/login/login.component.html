@@ -1,0 +1,48 @@
+<div class="headline">
+  Login form
+</div>
+<br>
+<div class="box">
+  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
+    <table>
+      <tr>
+        <td>
+          <label>Account No.: </label>
+        </td>
+        <td>
+          <input type="text" name="account_no" id="account_no" formControlName="account_no">
+          <div id="offcNameErro" class="error" *ngIf="loginForm.get('account_no').hasError('required') && loginForm.get('account_no').touched">
+            <span style="color:red">*Please Enter Account Number</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label for="password">Password: </label>
+        </td>
+        <td>
+          <input type="password" name="password" id="password" formControlName="password">
+          <div id="offcNameErro" class="error" *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').touched">
+            <span style="color:red">*Please Enter password</span>
+          </div>
+        </td>
+
+      </tr>
+      <br>
+
+      <button class="btn" type="submit" [disabled]="loginForm.invalid || loginForm.pending" style="font-size:20px;">Login</button>
+    </table>
+  </form>
+  <div *ngIf="!flag"><span style="color:red">{{msg}}</span>
+  </div>
+  <p>Want to shop?
+    <a [routerLink] (click)="navigation()">Go to shopping Website</a>
+  </p>
+
+  <!-- 
+  <p>New User?
+    <a [routerLink] (click)="navigate()">Register</a>
+  </p> -->
+
+</div>

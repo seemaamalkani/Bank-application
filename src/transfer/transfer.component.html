@@ -1,0 +1,117 @@
+<div class="headline">
+  <button (click)="toggleMenu()" class="hamburger">
+    <span>toggle menu</span>
+  </button>
+  <p class="head">Transfer Amount</p>
+  <app-menu [@slideInOut]="menuState"></app-menu>
+</div>
+<br>
+
+<div>
+  <button type="button" id="NEFT" (click)="neft()">NEFT</button>
+  <button type="button" id="RTGS" (click)="rtgs()">RTGS</button>
+</div>
+
+<div *ngIf="show">
+  <div *ngFor="let i of userInfoList">
+    <p>Account Number: {{i.account_number}}</p>
+    <p>Account Type: {{i.type}}</p>
+    <p>Branch: {{i.branch}}</p>
+    <p>Balance: {{i.Balance}}</p>
+  </div>
+  <br>
+  <div>
+    <label>Enter Amount:
+      <input type="number" id="amount" value="amount" [(ngModel)]="amount">
+      <div *ngIf="!amount > 0">
+        <span style="color:red">*Please enter amount</span>
+      </div>
+    </label>
+  </div>
+  <br>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Account no</th>
+        <th>Name</th>
+        <th>Branch</th>
+        <th>Limit</th>
+      </tr>
+    </thead>
+    <tbody style="text-align: center">
+      <tr *ngFor="let i of othertransferDetail" [ngClass]="{'active': selectedItem == i.account_number}">
+        <td>
+          <input type="radio" id="datarow123" name="radioselect" (click)="selectdetail(i)">
+          <input type="text" id="account_number" [(ngModel)]="i.account_number" disabled>
+        </td>
+        <td>
+          <input type="text" id="name" [(ngModel)]="i.username" disabled>
+        </td>
+        <td>
+          <input type="text" id="branch" [(ngModel)]="i.branch" disabled>
+        </td>
+        <td>
+          <input type="text" id="limit" [(ngModel)]="i.limit[0].neft" disabled>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <div>
+    <button type="submit" id="submit" (click)="onSubmit()" [disabled]="!amount>0 || !flag">Submit</button>
+  </div>
+</div>
+
+<div *ngIf="show1">
+  <div *ngFor="let i of userInfoList">
+    <p>Account Number: {{i.account_number}}</p>
+    <p>Account Type: {{i.type}}</p>
+    <p>Branch: {{i.branch}}</p>
+    <p>Balance: {{i.Balance}}</p>
+  </div>
+  <br>
+  <div>
+    <label>Enter Amount:
+      <input type="number" id="amount" value="amount" [(ngModel)]="amount">
+      <div *ngIf="!amount > 0">
+        <span style="color:red">*Please enter amount</span>
+      </div>
+    </label>
+  </div>
+  <br>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Account no</th>
+        <th>Name</th>
+        <th>Branch</th>
+        <th>Limit</th>
+        <th>Charges</th>
+      </tr>
+    </thead>
+    <tbody style="text-align: center">
+      <tr *ngFor="let i of othertransferDetail" [ngClass]="{'active': selectedItem == i.account_number}">
+        <td>
+          <input type="radio" id="datarow123" name="radioselect" (click)="selectdetail(i)">
+          <input type="text" id="account_number" [(ngModel)]="i.account_number" disabled>
+        </td>
+        <td>
+          <input type="text" id="name" [(ngModel)]="i.username" disabled>
+        </td>
+        <td>
+          <input type="text" id="branch" [(ngModel)]="i.branch" disabled>
+        </td>
+        <td>
+          <input type="text" id="limit" [(ngModel)]="i.limit[0].rtgs" disabled>
+        </td>
+        <td>
+          <input type="text" id="limit" [(ngModel)]="i.charges" disabled>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <div>
+    <button type="submit" id="submit" (click)="onSubmit()" [disabled]="!amount>0 || !flag">Submit</button>
+  </div>
+</div>

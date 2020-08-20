@@ -1,0 +1,18 @@
+.form{
+    padding-top: 10px;
+}
+
+.headline {
+    border-style: inset;
+    background-color: #5F5F5F;
+    height: 100px;
+    text-align: center;
+    font-size: 50px;
+    font-family: cursive;
+    color: floralwhite;
+  }
+  .head {
+    color: floralwhite;
+    text-align: center;
+    margin-top: 20px;
+  }

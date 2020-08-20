@@ -1,0 +1,162 @@
+[
+    {
+        "username":"Dhruvi",
+        "account_number":"1234567898",
+        "password":"1234567",
+        "type":"saving",
+        "branch":"SBI",
+        "loan":"no",
+        "Balance":"10000",
+        "charges": "25",
+        "credit": "1234567890123456",
+        "expiryDate":"21-11-2027",
+        "cvv":"123",
+        "debit":"1234567890123451",
+        "expirydebit": "21-11-2027",
+        "dcvv":"123",
+        "loan_history":[
+            {
+                "loan_amount":"100000",
+                "loan_year":"2010",
+                "no_of_EMI":"11",
+                "interest_rate":"1%",
+                "EMI":"10000" 
+            }
+        ],
+        "limit": [
+            {
+                "neft":"2000",
+                "rtgs":"20000",
+                "imp":"no limit"
+            }
+        ]
+    },
+    {
+        "username":"Seema",
+        "account_number":"1209876543",
+        "password":"7654321",
+        "type":"saving",
+        "branch":"SBI",
+        "loan":"yes",
+        "Balance":"50000",
+        "charges": "25",
+        "credit": "1234567890123457",
+        "expiryDate":"21-11-2027",
+        "cvv":"123",
+        "debit":"1234567890123452",
+        "expirydebit": "21-11-2027",
+        "dcvv":"123",
+        "loan_history":[
+            {
+                "loan_amount":"100000",
+                "loan_year":"2010",
+                "no_of_EMI":"11",
+                "interest_rate":"1%",
+                "EMI":"10000" 
+            }
+        ],
+        "limit": [
+            {
+                "neft":"2000",
+                "rtgs":"20000",
+                "imp":"no limit"
+            }
+        ]
+    },
+    {
+        "username":"Surbhi",
+        "account_number":"0987654321",
+        "password":"4567890",
+        "type":"saving",
+        "branch":"PNB",
+        "loan":"no",
+        "Balance":"6000",
+        "charges": "25",
+        "credit": "1234567890123458",
+        "expiryDate":"21-11-2027",
+        "cvv":"123",
+        "debit":"1234567890123453",
+        "expirydebit": "21-11-2027",
+        "dcvv":"123",
+        "loan_history":[
+            {
+                "loan_amount":"100000",
+                "loan_year":"2010",
+                "no_of_EMI":"11",
+                "interest_rate":"1%",
+                "EMI":"10000" 
+            }
+        ],
+        "limit": [
+            {
+                "neft":"2000",
+                "rtgs":"20000",
+                "imp":"no limit"
+            }
+        ]
+    },
+    {
+        "username":"Yesha",
+        "account_number":"1234567899",
+        "password":"123456789",
+        "type":"saving",
+        "branch":"HDFC",
+        "loan":"yes",
+        "Balance":"1000000",
+        "charges": "25",
+        "credit": "1234567890123459",
+        "expiryDate":"21-11-2027",
+        "cvv":"123",
+        "debit":"1234567890123454",
+        "expirydebit": "21-11-2027",
+        "dcvv":"123",
+        "loan_history":[
+            {
+                "loan_amount":"100000",
+                "loan_year":"2010",
+                "no_of_EMI":"11",
+                "interest_rate":"1%",
+                "EMI":"10000" 
+            }
+        ],
+        "limit": [
+            {
+                "neft":"2000",
+                "rtgs":"20000",
+                "imp":"no limit"
+            }
+        ]
+    },
+    {
+        "username":"Shailesh",
+        "account_number":"shailesh10",
+        "password":"shailesh",
+        "type":"saving",
+        "branch":"SBI",
+        "loan":"no",
+        "Balance":"500",
+        "charges": "25",
+        "credit": "1234567890123450",
+        "expiryDate":"21-11-2027",
+        "cvv":"123",
+        "debit":"1234567890123455",
+        "expirydebit": "21-11-2027",
+        "dcvv":"123",
+        "loan_history":[
+            {
+                "loan_amount":"100000",
+                "loan_year":"2010",
+                "no_of_EMI":"11",
+                "interest_rate":"1%",
+                "EMI":"10000" 
+            }
+        ],
+        "limit": [
+            {
+                "neft":"2000",
+                "rtgs":"20000",
+                "imp":"no limit"
+            }
+        ]
+    }
+]

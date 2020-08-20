@@ -1,0 +1,28 @@
+<div class="headline">
+    <button (click)="toggleMenu()" class="hamburger">
+        <span>toggle menu</span>
+    </button>
+    <p class="head">User Information</p>
+    <app-menu [@slideInOut]="menuState"></app-menu>
+</div>
+<br>
+
+<!-- <button (click)="UserDetail()">Click</button> -->
+<br>
+<div class="box">
+    <div *ngFor="let i of data">
+        <p>Account Holder: {{i.username}}</p>
+        <p>Account Number: {{i.account_number}}</p>
+        <p>Balance: {{i.Balance}}</p>
+        <p>Loan: {{i.loan}}</p>
+    </div>
+</div>
+<!-- <br><br>
+<div>
+    <label>Amount: </label>
+    <input type="number" placeholder="Enter amount" id="amount" [(ngModel)]="amount">
+    <button (click)="onDeposit()">Deposit</button>
+    <span>
+        <button (click)="onWithdraw()">Withdraw</button>
+    </span>
+</div> -->

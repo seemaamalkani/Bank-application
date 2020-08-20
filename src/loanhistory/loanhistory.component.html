@@ -1,0 +1,20 @@
+<div class="headline">
+  <button (click)="toggleMenu()" class="hamburger">
+    <span>toggle menu</span>
+  </button>
+  <p class="head">Loan History</p>
+  <app-menu [@slideInOut]="menuState"></app-menu>
+</div>
+<br>
+<div *ngIf="!show">
+  <h1>You did not take any loan</h1>
+</div>
+<div *ngIf="show">
+  <div *ngFor="let loanInfo of loan_history">
+    Loan amount : {{loanInfo.loan_amount}}
+    <br> Loan year : {{loanInfo.loan_year}}
+    <br> No. of EMI : {{loanInfo.no_of_EMI}}
+    <br> Interest rate: {{loanInfo.interest_rate}}
+    <br> EMI : {{loanInfo.EMI}}
+  </div>
+</div>

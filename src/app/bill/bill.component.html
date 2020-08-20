@@ -1,0 +1,28 @@
+<div class="headline">
+  <button (click)="toggleMenu()" class="hamburger">
+      <span>toggle menu</span>
+  </button>
+  <p class="head">BILL</p>
+  <app-menu [@slideInOut]="menuState"></app-menu>
+</div>
+<br>
+
+<div class="box">
+  <div>
+    <label>Name: {{name}}</label>
+  </div>
+  <br>
+  <div>
+    <label>Product Details:</label>
+    <div *ngFor = "let i of Item" style="text-indent: 50px;">
+      <p>Name: {{i.name}}</p>
+      <p>Quantity: {{i.quantity}}</p>
+    </div>
+  </div>
+  <br>
+  <div>
+    <label>Total Charge: {{balance}}</label>
+  </div>
+  <br>
+  <button type="button" (click)="onSubmit()" style="font-size: 20px; margin-left:35%; margin-bottom:10px;">OK</button>
+</div>

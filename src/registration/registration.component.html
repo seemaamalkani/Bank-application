@@ -1,0 +1,140 @@
+<form [formGroup]="myforms" (ngSubmit)="register(myforms)">
+  <div>
+    <label>Name: </label>
+    <input type="text" name="name" formControlName="name">
+    <div id="offcNameErro" class="error" *ngIf="myforms.get('name').hasError('required') && myforms.get('name').touched">
+      <span style="color:red">*Please Enter Name</span>
+    </div>
+    <div id="offcNameErro" class="error" *ngIf="myforms.get('name').hasError('pattern')">
+      <span style="color:red">*Please Enter Valid Name</span>
+    </div>
+  </div>
+  <br>
+
+  <div>
+    <label>Account No.: </label>
+    <input type="text" name="account_no" formControlName="account_no">
+    <div id="offcNameErro" class="error" *ngIf="myforms.get('account_no').hasError('required') && myforms.get('account_no').touched">
+      <span style="color:red">*Please Enter Account Number</span>
+    </div>
+    <div id="offcNameErro" class="error" *ngIf="myforms.get('account_no').hasError('pattern')">
+      <span style="color:red">*Please Enter Valid Account Number</span>
+    </div>
+  </div>
+  <br>
+
+  <div>
+    <label>CIF No.: </label>
+    <input type="text" name="cif_no" formControlName="cif_no">
+    <div id="offcNameErro" class="error" *ngIf="myforms.get('cif_no').hasError('required') && myforms.get('cif_no').touched">
+      <span style="color:red">*Please Enter CIF Number</span>
+    </div>
+    <div id="offcNameErro" class="error" *ngIf="myforms.get('cif_no').hasError('pattern')">
+      <span style="color:red">*Please Enter Valid CIF Number</span>
+    </div>
+  </div>
+  <br>
+
+  <div>
+    <label>Email: </label>
+    <input type="email" name="email" formControlName="email">
+    <div id="offcNameErro" class="error" *ngIf="myforms.get('email').hasError('required') && myforms.get('email').touched">
+      <span style="color:red">*Please Enter Email Address</span>
+    </div>
+    <div id="offcNameErro" class="error" *ngIf="myforms.get('email').hasError('email')">
+      <span style="color:red">*Please Enter Valid Email</span>
+    </div>
+  </div>
+  <br>
+
+  <div formGroupName="pass">
+    <div>
+      <label>Password: </label>
+      <input type="password" formControlName="password" id="password">
+      <div id="offcNameErro" class="error" *ngIf="myforms.get('pass.password').hasError('required') && myforms.get('pass.password').touched">
+        <span style="color:red">*Please Enter Password</span>
+      </div>
+      <div id="offcNameErro" class="error" *ngIf="myforms.get('pass.password').hasError('minlength')">
+        <span style="color:red">*Password should be of minlength 8</span>
+      </div>
+    </div>
+    <br>
+    <div>
+      <label>Confirm Password: </label>
+      <input type="password" formControlName="cpassword" id="cpassword">
+      <div id="offcNameErro" class="error" *ngIf="myforms.get('pass.cpassword').hasError('required') && myforms.get('pass.cpassword').touched">
+        <span style="color:red">*Please Enter Password</span>
+      </div>
+    </div>
+    <div id="offcPasswordErro" class="error" *ngIf="myforms.get('pass.cpassword').hasError('MatchPassword')">
+      <span style="color:red">*Password did not match</span>
+    </div>
+  </div>
+  <br>
+
+  <div>
+    <label>Branch Name: </label>
+    <input type="text" name="branch" formControlName="branch">
+    <div id="offcNameErro" class="error" *ngIf="myforms.get('branch').hasError('required') && myforms.get('branch').touched">
+      <span style="color:red">*Please Enter Branch Name</span>
+    </div>
+    <div id="offcNameErro" class="error" *ngIf="myforms.get('branch').hasError('pattern')">
+      <span style="color:red">*Please Enter Valid Branch Name</span>
+    </div>
+  </div>
+  <br>
+
+  <div>
+    <label>Mob No.: </label>
+    <input type="text" name="mob" formControlName="mob">
+    <div id="offcNameErro" class="error" *ngIf="myforms.get('mob').hasError('required') && myforms.get('mob').touched">
+      <span style="color:red">*Please Enter Mobile Number</span>
+    </div>
+    <div id="offcNameErro" class="error" *ngIf="myforms.get('mob').hasError('pattern')">
+      <span style="color:red">*Please Enter Valid Mobile Number</span>
+    </div>
+    <div id="offcNameErro" class="error" *ngIf="myforms.get('mob').hasError('minlength')">
+      <span style="color:red">*minLength should be of 8 digit</span>
+    </div>
+    <div id="offcNameErro" class="error" *ngIf="myforms.get('mob').hasError('maxlength')">
+      <span style="color:red">*maxLength should be of 11 digit</span>
+    </div>
+  </div>
+  <br>
+
+  <div>
+    <label>Aadhar Card No.: </label>
+    <input type="text" name="aadhar" formControlName="aadhar">
+    <div id="offcNameErro" class="error" *ngIf="myforms.get('aadhar').hasError('required') && myforms.get('aadhar').touched">
+      <span style="color:red">*Please Enter Aadhar Card Number</span>
+    </div>
+    <div id="offcNameErro" class="error" *ngIf="myforms.get('aadhar').hasError('pattern')">
+      <span style="color:red">*Please Enter Valid Aadhar Card Number</span>
+    </div>
+  </div>
+  <br>
+
+  <div>
+    <label>PAN Card: </label>
+    <input type="text" name="pan" formControlName="pan">
+    <div id="offcNameErro" class="error" *ngIf="myforms.get('pan').hasError('required') && myforms.get('pan').touched">
+      <span style="color:red">*Please Enter PAN Card Number</span>
+    </div>
+  </div>
+  <br>
+
+  <div>
+    <label>Address: </label>
+    <textarea rows="5" cols="50" name="address" formControlName="address"></textarea>
+    <div id="offcNameErro" class="error" *ngIf="myforms.get('address').hasError('required') && myforms.get('address').touched">
+      <span style="color:red">*Please Enter Address</span>
+    </div>
+  </div>
+  <br>
+</form>
+
+<button type="submit" [disabled]="myforms.invalid || myforms.pending" (click)="register(myforms)">Register</button>
+
+<p>Already a User?
+  <a [routerLink] (click)="goBack()">Login</a>
+</p>

@@ -1,0 +1,73 @@
+.headline {
+    border-style: inset;
+    background-color: #5F5F5F;
+    height: 100px;
+    color: #fff;
+    text-align: center;
+    font-size: 50px;
+    font-family: cursive;
+  }
+  
+  .head {
+    color: floralwhite;
+    text-align: center;
+    margin-top: -83px;
+  }
+
+  .hamburger {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 96px;
+    height: 96px;
+    font-size: 0;
+    text-indent: -9999px;
+    cursor: pointer;
+    outline: none;
+    background: none;
+    border: 0;
+  }
+   
+   
+  .hamburger span {
+    display: block;
+    position: absolute;
+    top: 44px;
+    left: 18px;
+    right: 18px;
+    height: 8px;
+    background: floralwhite;
+    z-index: 1;
+  }
+   
+  .hamburger span::before,
+  .hamburger span::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background-color: floralwhite;
+    content: "";
+  }
+   
+  .hamburger span::before {
+    top: -20px;
+  }
+   
+  .hamburger span::after {
+    bottom: -20px;
+  }
+
+  .box {
+    background-color: lightgrey;
+    border-style: outset;
+    text-align: left;
+    font-size: 25px;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border-radius: 20px; 
+  }

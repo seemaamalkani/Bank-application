@@ -1,0 +1,35 @@
+.headline {
+    border-style: inset;
+    background-color: orange;
+    height: 100px;
+    color: #fff;
+    text-align: center;
+    padding-top: 25px;
+    font-size: 50px;
+    font-family: cursive;
+  }
+  
+  
+  .box {
+    background-color: lightgrey;
+    border-style: outset;
+    padding-top: 80px;
+    padding-left: 9px;
+    text-align: left;
+    font-size: 25px;
+    height: 260px;
+    width:530px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  input {
+    height: 17px;
+    margin-right: -300px;
+  }
+  
+  
+  .btn {
+    margin-left: 120px;
+  }
+  

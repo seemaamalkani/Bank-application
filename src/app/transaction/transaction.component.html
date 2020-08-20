@@ -1,0 +1,30 @@
+<div class="headline">
+    <button (click)="toggleMenu()" class="hamburger">
+        <span>toggle menu</span>
+    </button>
+    <p class="head">Transaction</p>
+    <app-menu [@slideInOut]="menuState"></app-menu>
+</div>
+<br>
+
+
+<div>
+  Amount:
+  <input type="number" id="amount" [(ngModel)]='amount'>
+  <div *ngIf="!amount > 0">
+    <span style="color:red">*Please enter amount</span>
+  </div>
+  <br>
+  <br> Available Balance after withdrawal :
+  <input type="number" id="afterdeposit" value="{{withdraw}}" disabled>
+  <br>
+  <br> Available Balance after deposit:
+  <input type="number" id="afterwithdraw" value="{{deposit}}" disabled>
+  <br>
+  <br>
+  <button (click)='onWithdraw()' [disabled]="!amount>0">Withdraw </button>
+  <button (click)='onDeposit()' [disabled]="!amount>0">Deposit</button>
+  <button (click)='loanhistory()'>Loan History</button>
+  <button (click)="loan()">Apply to Loan</button>
+  <button (click)="money()">Money Transfer</button>
+</div>

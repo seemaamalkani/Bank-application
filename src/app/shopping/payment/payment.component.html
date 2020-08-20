@@ -1,0 +1,115 @@
+<div class="headline">
+    <p class="head">Payment</p>
+</div>
+<br>
+
+<div>
+    <button type="button" id="creditcard" (click)="creditCard()">credit card</button>
+    <button type="button" id="debitcard" (click)="debitCard()">debit card</button>
+    <button type="button" id="netbanking" (click)="netbanking()">net banking</button>
+</div>
+
+
+<div class="form" id="pay" *ngIf="show">
+    <form id="payment" [formGroup]="creditForm" (ngSubmit)="submit(creditForm)">
+        <table>
+            <tr>
+                <td>
+                    <label>Credit Card Number:</label>
+                </td>
+                <td>
+                    <input type="text" name="credit" id="credit" formControlName="credit">
+                    <div id="offcNameErro" class="error" *ngIf="creditForm.get('credit').hasError('required') && creditForm.get('credit').touched">
+                        <span style="color:red">*Please Enter Credit Card Number</span>
+                    </div>
+                    <div id="offcNameErro" class="error" *ngIf="creditForm.get('credit').hasError('pattern')">
+                        <span style="color:red">*Credit Card Number should be of 16 digits only</span>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>Expiry Date: </label>
+                </td>
+                <td>
+                    <input type="text" name="expiry" id="expiry" formControlName="expiry">
+                    <div id="offcNameErro" class="error" *ngIf="creditForm.get('expiry').hasError('required') && creditForm.get('expiry').touched">
+                        <span style="color:red">*Please Enter Expiry Date</span>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>CVV: </label>
+                </td>
+                <td>
+                    <input type="text" name="cvv" id="cvv" formControlName="cvv">
+                    <div id="offcNameErro" class="error" *ngIf="creditForm.get('cvv').hasError('required') && creditForm.get('cvv').touched">
+                        <span style="color:red">*Please Enter CVV</span>
+                    </div>
+                    <div id="offcNameErro" class="error" *ngIf="creditForm.get('cvv').hasError('pattern')">
+                        <span style="color:red">*CVV Number should be of 3 digits only</span>
+                    </div>
+                </td>
+            </tr>
+
+            <br>
+
+            <button class="btn" type="submit" [disabled]="creditForm.invalid || creditForm.pending" style="font-size:20px;">Submit</button>
+        </table>
+    </form>
+
+</div>
+
+<div class="form" id="pay1" *ngIf="show1">
+    <form id="debitpayment" [formGroup]="debitForm" (ngSubmit)="onSubmit(debitForm)">
+        <table>
+            <tr>
+                <td>
+                    <label>Debit Card Number:</label>
+                </td>
+                <td>
+                    <input type="text" class="from-control" id="cnum" formControlName="debit">
+                    <div id="offcNameErro" class="error" *ngIf="debitForm.get('debit').hasError('required') && debitForm.get('debit').touched">
+                        <span style="color:red">*Please Enter Debit Card Number</span>
+                    </div>
+                    <div id="offcNameErro" class="error" *ngIf="debitForm.get('debit').hasError('pattern')">
+                        <span style="color:red">*Debit Card Number should be of 16 digits only</span>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>Expiry Date:</label>
+                </td>
+                <td>
+                    <input type="text" class="from-control" id="date" formControlName="expiry">
+                    <div id="offcNameErro" class="error" *ngIf="debitForm.get('expiry').hasError('required') && debitForm.get('expiry').touched">
+                        <span style="color:red">*Please Enter Expiry Date</span>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>CVV:</label>
+                </td>
+                <td>
+                    <input type="text" class="from-control" id="cvv" formControlName="cvv">
+                    <div id="offcNameErro" class="error" *ngIf="debitForm.get('cvv').hasError('required') && debitForm.get('cvv').touched">
+                        <span style="color:red">*Please Enter CVV</span>
+                    </div>
+                    <div id="offcNameErro" class="error" *ngIf="debitForm.get('cvv').hasError('pattern')">
+                        <span style="color:red">*CVV Number should be of 3 digits only</span>
+                    </div>
+                </td>
+            </tr>
+
+            <br>
+            <button class="btn" type="submit" [disabled]="debitForm.invalid || debitForm.pending" style="font-size:20px;">Submit</button>
+        </table>
+    </form>
+</div>

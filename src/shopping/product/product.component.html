@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="headline">
+    <p class="head">Product List</p>
+  </div>
+
+
+  <div class="data">
+    <table>
+      <tr>
+        <td>
+          <div class="body" id="items">
+            <div *ngFor="let dataitem of items">
+              <div class="id">
+                <label for="id">ID:{{dataitem.id}}</label>
+              </div>
+              <div>
+                <input type="text" id="text" name="quantity" placeholder="Quantity" (blur)=addItem(dataitem.id,dataitem.grocery_name,dataitem.price,dataitem.quantity)
+                  [(ngModel)]="dataitem.quantity">
+                <!-- <button type="button" id="button" (blur)=addItem(dataitem.id,dataitem.grocery_name,dataitem.price,dataitem.quantity)>Select</button> -->
+              </div>
+              <!-- <div class="select"><input type="checkbox" style="margin-left:700px;" (change)="addItem(dataitem.id,dataitem.grocery_name,dataitem.price)"></div> -->
+              grocery name:{{dataitem.grocery_name}}
+              <br> price:{{dataitem.price}}
+              <br>
+              <br>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <br>
+    <button type="button" style="margin-left:300px" (click)="inVoice()" [disabled]="!this.count>0">Buy</button>
+    <button type="button" style="float:left;" (click)="logout()">Logout</button>
+  </div>
+  <div class="data1">
+    <h2>Selected item list</h2>
+    <div *ngIf="show">
+      <table>
+        <tr>
+          <td>
+            <div class="body1" id="items1">
+              <div>
+                <div *ngFor="let itemName of itemNameList">
+                  Selected item:{{itemName.name}}
+                  <br> Selected quantity:{{itemName.quantity}}
+                  <br> Selected price:{{itemName.price}}*{{itemName.quantity}}
+                  <br>
+                  <br>
+                  <!-- Price is:{{itemName}} -->
+                  <!-- Quantity is: {{itemName.price}} -->
+                </div>
+                <br>
+                <br>
+                <!-- <div *ngFor="let itemPrice of itemPriceList">
+                Selected item is:{{itemPrice}}
+              </div> -->
+                <!-- <div *ngFor="let count of itemPriceList"> -->
+                <!-- Quantity is: {{quantity}}<br> -->
+                Total price is: {{count}}
+                <!-- </div> -->
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  </div>

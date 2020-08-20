@@ -1,0 +1,39 @@
+<div class="headline">
+    <button (click)="toggleMenu()" class="hamburger">
+        <span>toggle menu</span>
+    </button>
+    <p class="head">Fixed Deposit</p>
+    <app-menu [@slideInOut]="menuState"></app-menu>
+</div>
+<br>
+<form [formGroup]="FD" (ngSubmit)="onOK(FD)">
+    <div>
+        Principal:
+        <input type="number" id="DepositPrincipal" formControlName="Principal" (blur)="ROI()">
+        <div id="offcNameErro" class="error" *ngIf="FD.get('Principal').hasError('required') && FD.get('Principal').touched">
+            <span style="color:red">*Please Enter Amount</span>
+        </div>
+        <br>
+        <br> Rate Of Interest(pa):
+        <input type="number" id="Depositroi" value="{{RateOfInterest}}" disabled>
+        <br>
+        <br> Time(in year):
+        <input type="number" id="DepositTime" formControlName="Time">
+        <div id="offcNameErro" class="error" *ngIf="FD.get('Time').hasError('required') && FD.get('Time').touched">
+            <span style="color:red">*Please Enter Time in years</span>
+        </div>
+        <br>
+        <br> Number Of Times (per year):
+        <input type="number" id="Depositnumber" formControlName="NumberOfTimes">
+        <div id="offcNameErro" class="error" *ngIf="FD.get('NumberOfTimes').hasError('required') && FD.get('NumberOfTimes').touched">
+            <span style="color:red">*Please Enter Number of times the interest is compounded per year</span>
+        </div>
+        <br>
+        <br> FD:
+        <input type="number" id="DepositTime" value="{{FixedDeposit}}" disabled>
+        <br>
+        <br>
+        <button [disabled]="FD.invalid || FD.pending">Ok</button>
+        <button (click)='onSubmit()' [disabled]="!flag">Submit</button>
+    </div>
+</form>
